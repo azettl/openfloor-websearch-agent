@@ -32,34 +32,11 @@ export class WebSearchAgent extends BotAgent {
         const responseEvent = await this._handleWebQuery(event, inEnvelope);
         if (responseEvent) responseEvents.push(responseEvent);
       } else if (addressedToMe && event.eventType === 'getManifests') {
-        const manifestData = {
-          identification: {
-            speakerUri: this.speakerUri,
-            serviceUrl: this.serviceUrl,
-            organization: 'OpenFloor Research',
-            conversationalName: 'Web Search Agent',
-            synopsis: 'Web search specialist for current information, news, guides, and general web content'
-          },
-          capabilities: [
-            {
-              keyphrases: [
-                'web search', 'news', 'current', 'latest', 'how to',
-                'guide', 'tutorial', 'what is', 'information', 'recent'
-              ],
-              descriptions: [
-                'Search the web for current information and news',
-                'Find guides, tutorials, and how-to information',
-                'Provide general web search results and overviews'
-              ]
-            }
-          ]
-        };
-
         responseEvents.push({
           eventType: 'publishManifests',
           to: { speakerUri: inEnvelope.sender.speakerUri },
           parameters: {
-            servicingManifests: [manifestData]
+            servicingManifests: [this.manifest.toObject()]
           }
         });
       }
