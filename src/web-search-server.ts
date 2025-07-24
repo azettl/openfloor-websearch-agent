@@ -25,7 +25,7 @@ app.use((req, res, next) => {
 // Create the web search agent instance
 const webSearchAgent = createWebSearchAgent({
   speakerUri: 'tag:openfloor-research.com,2025:web-search-agent',
-  serviceUrl: process.env.SERVICE_URL || 'http://localhost:8080',
+  serviceUrl: process.env.SERVICE_URL || 'https://pszvphapmr.us-east-1.awsapprunner.com/',
   name: 'Web Search Specialist',
   organization: 'OpenFloor Demo Corp'
 });
