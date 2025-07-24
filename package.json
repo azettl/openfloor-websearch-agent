@@ -1,0 +1,30 @@
+{
+  "name": "openfloor-parrot-agent",
+  "version": "1.0.0",
+  "description": "A simple parrot agent that echoes back messages using the Open Floor Protocol",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "ts-node src/index.ts"
+  },
+  "keywords": [
+    "openfloor",
+    "parrot",
+    "agent",
+    "aws",
+    "app-runner"
+  ],
+  "author": "Andreas Zettl",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "@openfloor/protocol": "^0.0.3",
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.10.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.3.0"
+  }
+}
